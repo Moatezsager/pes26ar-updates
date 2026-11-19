@@ -1,0 +1,41 @@
+name: Import verified game data from Drive
+on:
+  workflow_dispatch:
+    inputs:
+      drive_id:
+        description: Public Google Drive ZIP file ID
+        required: true
+        type: string
+      release:
+        description: New immutable data version
+        required: true
+        default: '2026.11.19.1'
+        type: string
+permissions:
+  contents: write
+concurrency:
+  group: drive-data-import
+  cancel-in-progress: false
+jobs:
+  import:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Install public download helper in an isolated environment
+        run: |
+          python3 -m venv .venv
+          .venv/bin/pip install --no-cache-dir gdown==6.5.2
+      - name: Download reviewed visual delta
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release download build-input-2026.11.19 --repo "$GITHUB_REPOSITORY" --pattern cloud-visual-input-20261119.zip
+          echo '471a8e9242a8a47f49ba735edbb1c494d74fd268b342ad91002eb036b0422115  cloud-visual-input-20261119.zip' | sha256sum --check
+          mv cloud-visual-input-20261119.zip visual-input.zip
+      - name: Import and verify draft release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DRIVE_FILE_ID: ${{ inputs.drive_id }}
+          DATA_RELEASE: ${{ inputs.release }}
+        run: .venv/bin/python scripts/import_drive.py --drive-id "$DRIVE_FILE_ID" --release "$DATA_RELEASE"

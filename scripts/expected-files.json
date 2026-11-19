@@ -1,0 +1,1634 @@
+[
+  {
+    "component": "commentary-ar",
+    "path": "Game/img/dt00_e.img",
+    "size": 680499200,
+    "sha256": "e6c3f08d28597834a1d9833627b6af530e42ce33a05902fcac7dcfca7af55da1"
+  },
+  {
+    "component": "game",
+    "path": "Game/img/dt01.img",
+    "size": 1067515904,
+    "sha256": "a8bf2b8a10ef4412561c5e2cb03265a716d3b44df0bc791c15d2c20a9e50ce44"
+  },
+  {
+    "component": "game",
+    "path": "Game/img/dt02.img",
+    "size": 293421056,
+    "sha256": "da2d77b775c1e895a77cefc69d1d5766b9b8004d536db4c1c609e1a9ed53244a"
+  },
+  {
+    "component": "game",
+    "path": "Game/img/dt03.img",
+    "size": 34404352,
+    "sha256": "6c849b533b534f3eaea6645deaa1ae89d845121637606d508edbd293300cf2d9"
+  },
+  {
+    "component": "game",
+    "path": "Game/img/dt04.img",
+    "size": 11100160,
+    "sha256": "0bcac8d9c7f3394707cb25463dbd8ae11dbc1607422daf5e0f221543ca055ac2"
+  },
+  {
+    "component": "game",
+    "path": "Game/img/dt05_e.img",
+    "size": 6428672,
+    "sha256": "f9df94874ebe7ae3cbfbc6840c0766421e24ccec45e06abc6557c96f032d4050"
+  },
+  {
+    "component": "game",
+    "path": "Game/img/dt06.img",
+    "size": 222937088,
+    "sha256": "40c8f62e1ea2ce024bc377ee32a957d6da0d4dc0a94653e3bb93e8264d3890e2"
+  },
+  {
+    "component": "game",
+    "path": "Game/img/dt07.img",
+    "size": 1143814144,
+    "sha256": "bbac6a2c89bc9d7595b6860639b89d335843a2c5cb0f0504b8874ae92551e134"
+  },
+  {
+    "component": "game",
+    "path": "Game/img/dt08.img",
+    "size": 119992320,
+    "sha256": "6db5d08088f6ff7d88b5ddc10ed4fae86118fc6b247ddb328e48cac0648f6104"
+  },
+  {
+    "component": "game",
+    "path": "Game/img/dt09.img",
+    "size": 748683264,
+    "sha256": "3fca3fdc4225a2c47913052bad5d67de0a50cfd20791a077e39cdd2a3d5ed5ac"
+  },
+  {
+    "component": "game",
+    "path": "Game/img/dt0a.img",
+    "size": 2154496,
+    "sha256": "b2eaaff2b7e82b0570ffa6d858182a246afdd7669889adccca1d03bb63e8ff9a"
+  },
+  {
+    "component": "game",
+    "path": "Game/img/dt0b.img",
+    "size": 190507008,
+    "sha256": "51706d267be994d1a923826d8f0afe61e893f06291969ce07ff7a81dc54b0669"
+  },
+  {
+    "component": "game",
+    "path": "Game/img/dt0c.img",
+    "size": 3261429760,
+    "sha256": "259bca3b338f96d7e5abf37dba3789faae46c4cab06c52e7cbd817d7f65dd7ca"
+  },
+  {
+    "component": "game",
+    "path": "Game/img/dt0d.img",
+    "size": 475709440,
+    "sha256": "77fb28a02b6b7e2087291eced2b5a591c4662c8b71d576b90876de99f4952fd7"
+  },
+  {
+    "component": "game",
+    "path": "Game/img/dt0e.img",
+    "size": 91787264,
+    "sha256": "5039ab5918de0fd3d4b402ddb769c73a92a007dfe3519864023229ba895de7eb"
+  },
+  {
+    "component": "game",
+    "path": "Game/img/dt0f.img",
+    "size": 643809280,
+    "sha256": "a271d6b0464f01c50e0efb02cdf330e00ec0f7b72e3cf31543477934fd537eb8"
+  },
+  {
+    "component": "game",
+    "path": "Game/img/dt10.img",
+    "size": 26624,
+    "sha256": "64e652d268d00d35b6f4b5db3ec0442b279ca1395e234a480ab6db12bd6860f4"
+  },
+  {
+    "component": "game",
+    "path": "Game/img/dt11.img",
+    "size": 417452032,
+    "sha256": "90f91b5825f38e28a14a342b9c734a39c89380207e0f5255bb62807fa9a08cb8"
+  },
+  {
+    "component": "game",
+    "path": "Game/img/pes12ci.sfd",
+    "size": 6422528,
+    "sha256": "44ddb851181b50daf73adfa390a1b77b1166d0d46913831a25057822d85bc2c2"
+  },
+  {
+    "component": "game",
+    "path": "Game/img/pes13cl_a.sfd",
+    "size": 55572480,
+    "sha256": "3f876368ab0f44a24274df35f2a05e3d02e642e55a940dfc0122e57c798abd29"
+  },
+  {
+    "component": "game",
+    "path": "Game/img/pes13cl_b.sfd",
+    "size": 29542400,
+    "sha256": "1088bcfe1804c1d266c1e4e8c6ef58b167d08a710a25610ab159c08689ef616e"
+  },
+  {
+    "component": "game",
+    "path": "Game/img/pes13cl_c.sfd",
+    "size": 29542400,
+    "sha256": "1088bcfe1804c1d266c1e4e8c6ef58b167d08a710a25610ab159c08689ef616e"
+  },
+  {
+    "component": "game",
+    "path": "Game/img/pes13el_a.sfd",
+    "size": 32505856,
+    "sha256": "1693139d2c42a0720850db8471b61311543b7dfba0e3d59e51bdc7f65618b9bc"
+  },
+  {
+    "component": "game",
+    "path": "Game/img/pes13el_b.sfd",
+    "size": 32505856,
+    "sha256": "1693139d2c42a0720850db8471b61311543b7dfba0e3d59e51bdc7f65618b9bc"
+  },
+  {
+    "component": "game",
+    "path": "Game/img/pes13el_c.sfd",
+    "size": 32505856,
+    "sha256": "1693139d2c42a0720850db8471b61311543b7dfba0e3d59e51bdc7f65618b9bc"
+  },
+  {
+    "component": "game",
+    "path": "Game/img/pes13lb_a.sfd",
+    "size": 2795520,
+    "sha256": "b537ef4cdbe406c4443fc148b915779ef8e00afc1ec4de8683d24d3539379617"
+  },
+  {
+    "component": "game",
+    "path": "Game/img/pes13pv.sfd",
+    "size": 110729216,
+    "sha256": "00a77716cdc191e42b1240d041d64140136c6926a0b7165f28c1f75ce41e61b2"
+  },
+  {
+    "component": "game",
+    "path": "Game/img/pes13sc_a.sfd",
+    "size": 21424128,
+    "sha256": "4784ef4bd8f3c07591913441ba837b26f012ca43afe2fab546e954dc3ebf1ac3"
+  },
+  {
+    "component": "game",
+    "path": "Game/img/pes13st.sfd",
+    "size": 16117760,
+    "sha256": "d882a6eb520040115071e667fc15a79be35f0ea040186bc2668874997a9a6ece"
+  },
+  {
+    "component": "game",
+    "path": "Game/img/pes_topBG_E_1.sfd",
+    "size": 131334186,
+    "sha256": "2f6ffe41f9fb099d1154a9ef30020dd98de669abcf14540afba3bfe16ba463d0"
+  },
+  {
+    "component": "game",
+    "path": "Game/img/pes_topBG_E_2.sfd",
+    "size": 17539072,
+    "sha256": "a0eb11ed18f2e2b62e3f349f170e07c0840b2f8c87878138e2ebf162c612a2d7"
+  },
+  {
+    "component": "game",
+    "path": "Game/pes2013_limpo.exe",
+    "size": 19969024,
+    "sha256": "1db788587daee45b760d0a65642a15e81036a7811d649284c49542d0935bc9e0"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/EDIT.bin",
+    "size": 7906768,
+    "sha256": "d56b84bcbddae5d2170ae7fb4d377487fa7e086cbefe3447dc45c94c892f62e5"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE001.bin",
+    "size": 131948,
+    "sha256": "57a182a15524df3b513e88c096fceba93dc78284559e7649d33b023e8605bdd1"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE002.bin",
+    "size": 131948,
+    "sha256": "c11a6156f2638dab52cad170e9aebfa4d45fff14036ee11cc35fb836853cf8db"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE003.bin",
+    "size": 131948,
+    "sha256": "c42fe2a2bc9e1dbf1c38cc098224d8b377d613a06dbbd7bfbf0f5b1a81748767"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE004.bin",
+    "size": 131948,
+    "sha256": "86fd1ccf4b3d97ef09136a9d94f1e08e2536c3c25a0e0b285fb9e2689c6bda4c"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE005.bin",
+    "size": 131948,
+    "sha256": "84bf8a105974e7163cfd96621f796919be71974c3a45b71f7c478afd3bd0c12b"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE006.bin",
+    "size": 131948,
+    "sha256": "de3502a8177a6cffcc892eb0e546705c74b3c4b47f7768e6e347ec1d3a19f23e"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE007.bin",
+    "size": 131948,
+    "sha256": "0fa149cabc88f5e84e15acf8ae6c5925bed2dae3067a983af9eb1e51ba60288f"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE008.bin",
+    "size": 131948,
+    "sha256": "caade7ddf939130d7927bf0d1864aea3bdfe2d2b0655692e325951d5ee2749f1"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE009.bin",
+    "size": 131948,
+    "sha256": "40fcb08e069f67510701912d8189e97e41a1a18a28297196c1be32b6775a74f1"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE010.bin",
+    "size": 131948,
+    "sha256": "db001c39ac495ec2a21001834ba9dec12120b65bc6ef5d5fe40c031b2f7489eb"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE011.bin",
+    "size": 131948,
+    "sha256": "1a30834de52e41d503acd91e278c3b320d66ac3a01997612f9f28c936cf58f46"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE012.bin",
+    "size": 131948,
+    "sha256": "a55141c4030f3ef77b6744e5bfb4c80e1d3444cd1b73c0f349b6b10767c728f1"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE013.bin",
+    "size": 131948,
+    "sha256": "55ad48ed21ddec6120b97d48f438cb1549347c545b46df0cbe5d3c73bf08558d"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE014.bin",
+    "size": 131948,
+    "sha256": "6f11b0d8f5b930ae16bb15e611fd35561ea0d1d47c2f5ad723dc05d839d643a6"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE015.bin",
+    "size": 131948,
+    "sha256": "5f158198ddb7358060a0bba6713bc36f176292e047cb878b70df1aeba3545bab"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE016.bin",
+    "size": 131948,
+    "sha256": "ac435691a14ef04a1406b1266379c6c319a1e61d432a5a2e1f4e667c7ca2396a"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE017.bin",
+    "size": 131948,
+    "sha256": "3ac6b56223ad2422485098c0eea636cac69217347a1ccb9b29f88e046e52387d"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE018.bin",
+    "size": 131948,
+    "sha256": "2b26153c294565552b1595b8bbd8216890547d9ebfb5b837bf1bd6874c08cd58"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE019.bin",
+    "size": 131948,
+    "sha256": "c3ee0c06cdab08334b0af41b3db52977e48144f44438c733b042c49ae9e2e11b"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE020.bin",
+    "size": 131948,
+    "sha256": "c7546b1198792ea582e6e7aa1a1051ea15d59aec71370d6ea9e9d756adb8a305"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE021.bin",
+    "size": 131948,
+    "sha256": "ee4d2b0f1967d9862721a684528db544ef868196f9a5542c24c7259997e21187"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE022.bin",
+    "size": 131948,
+    "sha256": "1c41c235437a19cab368babb126151f60cede4c1f21f86b9dd8d84c9fa1a4632"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE023.bin",
+    "size": 131948,
+    "sha256": "f3886e0d4e4bfdedab37243b4ec495e56d39458f962c165f36859d8c0b80065d"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE024.bin",
+    "size": 131948,
+    "sha256": "98a331acaf28ae276f07658341a48ff05506efdbe3de0f547fafa9c3369bd634"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE025.bin",
+    "size": 131948,
+    "sha256": "a9d8a94215602d7f0447bb74f100efcd5947d3e40722e1c11f0315f2b10cdc43"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE026.bin",
+    "size": 131948,
+    "sha256": "ddce0a5c14c2a5fbb51cf328abcbf0a670704405f0e6ce938613a29908c89fc8"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE027.bin",
+    "size": 131948,
+    "sha256": "ba3931b73c0b564615bf4430c56c41a4b76cd9f91b12677c5326556512de6fa4"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE028.bin",
+    "size": 131948,
+    "sha256": "1cbff0fda617050df2e236ecfdae29fff0433ea3fc98897e972c763394ad3220"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE029.bin",
+    "size": 131948,
+    "sha256": "67f9ea9453e98a994dcdd197a0a21ddc530228119237fdba7fcba4e60c680633"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE030.bin",
+    "size": 131948,
+    "sha256": "945a5b682ae620034f4e57f9aba02c83765428967b6b22f85107852ac2fa6425"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE031.bin",
+    "size": 131948,
+    "sha256": "31568cc1af44785cc3806f157cb5918b3251cd0512a0f36c78a829be09eb235b"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE032.bin",
+    "size": 131948,
+    "sha256": "ab6d541abf5d8231a794c55805f64057b71696199fab764942c923eb8b45273c"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE033.bin",
+    "size": 131948,
+    "sha256": "82b7efe4e5bce31c8a38bf667fbaf4344cd1ae57209a920511783d30f847c79b"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE034.bin",
+    "size": 131948,
+    "sha256": "6aa70cdce32e6fc0b9e5892a44b2278eb6ceccc2ed7b774d6823176b69d67dc7"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE035.bin",
+    "size": 131948,
+    "sha256": "a77fd4827f4e1c9d794f9e1bd614f7cd6e0bc854cecd3c11aa0240484c61dc8a"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE036.bin",
+    "size": 131948,
+    "sha256": "9d6260ca91818c73adfaaa67ad6ef7a7bac99820f4f913cf69bba0f30a80cd4b"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE037.bin",
+    "size": 131948,
+    "sha256": "66596a0fb7211d640fe2450c28f2c133c58eae08956de2a8fda74827554bddaa"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE038.bin",
+    "size": 131948,
+    "sha256": "dce0a973ec9615d004ada79c830a8e7afb43dfa4b63429c58c9baadbabe4c2c2"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE039.bin",
+    "size": 131948,
+    "sha256": "78336bf128264b204c378e561f0d515c1656bd27fd2e9358af28b8b59d440927"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE040.bin",
+    "size": 131948,
+    "sha256": "4e974f1db6c7eb7e60ca09486ae2141f7af5457aa12a3db997f7c14e218936bf"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE041.bin",
+    "size": 131948,
+    "sha256": "c6aea4244a9ba8c4b31261328a5ed3fcd6a92250f438b40b50e09556520c5b43"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE042.bin",
+    "size": 131948,
+    "sha256": "7140cf2a8728756cd1338550bdf5afd43d1cf08b4e9d8eb4006d31336b9882ba"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE043.bin",
+    "size": 131948,
+    "sha256": "ad94442ccc2278d89d377dd687ee15324fdb3d7fa108c0b17bb6441b0c1aaad7"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE044.bin",
+    "size": 131948,
+    "sha256": "359860836eaf8d3c137e25ebc55dd9e6d0b8e7966b664c973557eadf2f2f3b98"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE045.bin",
+    "size": 131948,
+    "sha256": "b65fc338113639efd517d3ab60f7ff8a5b9bbd9dd7989d041701005e2d5f148b"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE046.bin",
+    "size": 131948,
+    "sha256": "2b7285ece4bbbdb1dd4650d7c27fbdada6cf0dc62a78b85cc812123b4e3eb1ca"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE047.bin",
+    "size": 131948,
+    "sha256": "675948e248a7bc0a47a94a3849d6ddfd3afa23d9f7a94b238b1573af6405adba"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE048.bin",
+    "size": 131948,
+    "sha256": "2a3f4234bd4f24f64ecbc95742b23a02de96e087452eeae0269cc5f02c4ffc93"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE049.bin",
+    "size": 131948,
+    "sha256": "90c81bfe728c9c64e246011412374bcaa75056088b6399b55f55af246be629ac"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE050.bin",
+    "size": 131948,
+    "sha256": "22c790783e5129ea6bf50d6637ceb40566c6c77e3b56fd9cffe41e0e01d9c9d3"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE051.bin",
+    "size": 131948,
+    "sha256": "732d0428fd998659bb32e8b810c367b4aa4b31ac8fd332e972aef7167d425ec8"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE052.bin",
+    "size": 131948,
+    "sha256": "8e7f61d15784115bfc6303ec44ea330b31881ac738d373bee3437c1aa3018a88"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE053.bin",
+    "size": 131948,
+    "sha256": "193ef0b1e98067738c73bed29b33361fcbcb9e6c07f1c9317c33cce4560e686d"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE054.bin",
+    "size": 131948,
+    "sha256": "12369afc0ba0ea698972ea6ad4a0438a938600cff5b207e0aaea3aff8925ffc1"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE059.bin",
+    "size": 131948,
+    "sha256": "be42ca1d3a8f01b4e3a6f8ce82dfab0f84d3b01793d3eced68b2bdc079792984"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE062.bin",
+    "size": 131948,
+    "sha256": "e38a980641cf0dd9a66b8dedee679c5f777c21a5fe3d6b0ab1dc0bf4fa75f42c"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE063.bin",
+    "size": 131948,
+    "sha256": "acf8542c4324f5121f0be4eeec436daf9f15c99aa86a2db820f92c83bda424e8"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE067.bin",
+    "size": 131948,
+    "sha256": "d45e2a97a8d932aa145afb0cfa9fffee8490b3fb797c4d7859995c8dd963fbb2"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE069.bin",
+    "size": 131948,
+    "sha256": "87ad62655d6e43c3c24b2fc3a44d35c9e72ec2bb3d4048fee3deaa544dd716b8"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE070.bin",
+    "size": 131948,
+    "sha256": "a9753de42412f96cb108207f6c3f41643c4568a65968c7aa43becbf4fb2525c2"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE073.bin",
+    "size": 131948,
+    "sha256": "f3af87688ccbe3de7ebce186f2fd071694adfeda1b21d60c732bbf4b2315a981"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE084.bin",
+    "size": 131948,
+    "sha256": "cb7ea3910cdd94a15c61639bfb1f301b7b4d000185521d839e01eceff2867248"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE085.bin",
+    "size": 131948,
+    "sha256": "11c88905050275af543dfa69ca3134779d9f71e7cab4bc4a98f816fe3f7c798e"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE088.bin",
+    "size": 131948,
+    "sha256": "099d74c05ef9b1bd0cb44057c978fb955facdbd7cc4f8c7e22dc27e02cb222af"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE089.bin",
+    "size": 131948,
+    "sha256": "9fd1dfd8d4f2c1b8d7b64ba753a0cf0962dd80b1331bfaba9343a79b18f87de7"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE090.bin",
+    "size": 131948,
+    "sha256": "9ffc439a38de65b77f71542523ad6e58670a121e806732d5f981c943b3b9ce03"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE091.bin",
+    "size": 131948,
+    "sha256": "eba196636214043e98b3f36c959689e2cc05ec6ce5d8a6cc44a30f6c6134330e"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE092.bin",
+    "size": 131948,
+    "sha256": "44cdaea304e198b4017678acb7822bcf4dabed73a13def4fb027d1a821b7322d"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE093.bin",
+    "size": 476512,
+    "sha256": "905ed8866156f0e54497e7bf75255790020de38ed3e95a562d1fe180da00738d"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE094.bin",
+    "size": 131948,
+    "sha256": "7f863042dcb86df97b07371cc6fef8d49c2323175bdd7f80474136719452f65e"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE095.bin",
+    "size": 131948,
+    "sha256": "48ab8e953d45968d413531b94f6f308a4b4cd2fa8be8430819f5968b891173bc"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE096.bin",
+    "size": 131948,
+    "sha256": "b5d48eac2cb76de4d5798ddde611406da7d7f602f6ed1726c1ffc50e0e938d49"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE097.bin",
+    "size": 131948,
+    "sha256": "5ff3324e5679987e7e9fe3d9fc127095d7b3677d2b03b61eae32f1a11fc28acd"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE098.bin",
+    "size": 131948,
+    "sha256": "b9e15a25fd52e14a6fe2ed18fc48cb9025ea7f77dec21420b5dfcf6e11f084e2"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE099.bin",
+    "size": 131948,
+    "sha256": "737f081ca555571a0cb80cbd31d55c1e53df465090162970ed85db21cb9d9e44"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE101.bin",
+    "size": 131948,
+    "sha256": "4c20a18c2836f561befc9f5767b4e0d77fa1bdddf1bc039334c8b2832ee4635b"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE112.bin",
+    "size": 131948,
+    "sha256": "4f5f8d00ed343aa748a7bb70a2cf6daa8f191f609b22323947787011407b30b8"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE115.bin",
+    "size": 131948,
+    "sha256": "593bfd36311bdcea7003df33e8b8e92c5bd770d7178567c1c274d7db060a4bd1"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE116.bin",
+    "size": 131948,
+    "sha256": "0af9c4425af9b95746f2b185b992096147c83e1ddc3b441b8e65e75801fe60da"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE118.bin",
+    "size": 131948,
+    "sha256": "f551507f506cb1727c6c8580ff4dc1678f4b74fae7185fe02759d82b42f3eb41"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE119.bin",
+    "size": 131948,
+    "sha256": "e1991b21d3b199ccdb9c6d3cfce124f4df0d1f43d515476ded803cf725c6285e"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE124.bin",
+    "size": 131948,
+    "sha256": "6181ab853614cbaafce4fe3b87ec50af78a97d7800f384ad1a2841728a2df607"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE125.bin",
+    "size": 131948,
+    "sha256": "dc52b546a69e5ef43df97fbc687e3525c46a6eb4f8eccb02f6fb06a3b326ec6b"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE130.bin",
+    "size": 131948,
+    "sha256": "be45428cecb0fb4307c7ea071d8e42046172ffc297116cdc47225cf705ba54aa"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/FACE328.bin",
+    "size": 131948,
+    "sha256": "f7388d09c7fb80b238775d38d90afafcc439aaaf6f47ea282a0e4630da9a3291"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/LCEMBLEM01.bin",
+    "size": 197417,
+    "sha256": "119e3d4750a989644dfa94e1b0b11c87837bd350496c337c2060f3bfc0bd49a7"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/LCEMBLEM02.bin",
+    "size": 197417,
+    "sha256": "14522779149262336fa563ef35b0311fdf03c442609db2ea8474a00e73425b99"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/LCEMBLEM03.bin",
+    "size": 197417,
+    "sha256": "792a6ad1e7e5d555772dad08c0506772aeea787a85d85c6c9869732063e127ad"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/LCEMBLEM04.bin",
+    "size": 197417,
+    "sha256": "c9f14924fdbf5f2a948026b87e8d1b6170a2a6bbe352e8cf81f8339caf76194d"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/LCEMBLEM05.bin",
+    "size": 197417,
+    "sha256": "64fd037d4f4ed3aba856cfb4e0ec3c60c83259e750e7a30af3ca786c46f4ba05"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/LCEMBLEM06.bin",
+    "size": 197417,
+    "sha256": "c2d89c76526603099031c23d4bdf8ce218db9ab2747749037a1fe094ad6b115b"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/LCEMBLEM07.bin",
+    "size": 197417,
+    "sha256": "3b385f760ef7f0881f782000895eec5f9b1944b961e348621f5ee0b14a32c33b"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/LCEMBLEM08.bin",
+    "size": 197417,
+    "sha256": "2dddb4d6a1c7e63b89d2d4d7cbf941e0e23718b2bd135ab7436593f5ed2e599e"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/LCEMBLEM09.bin",
+    "size": 197417,
+    "sha256": "7cc36712c3e3a16fe419d5c1d34a6bb9a3c812806943421360a6708f03dcbf1e"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/LCEMBLEM10.bin",
+    "size": 197417,
+    "sha256": "e9bdbee14e2dbbad12d75acb77b1c5b5dc54241c62ffb1feea33ccb5acf57b34"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/LIB201301.bin",
+    "size": 5243688,
+    "sha256": "97d35a389a92820d4842d2e23ccca5961aa937e535f3776a3350f66cc37ed369"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_EXPORT01.bin",
+    "size": 4424652,
+    "sha256": "8aea46f1b3cb62a135900c0cc0438a61152d7a196b11306e633477ebfc2b1761"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_EXPORT02.bin",
+    "size": 4424652,
+    "sha256": "8d2620c397ffdd7ab9ba7c6ebdf399f462b03d0fec830a372dc366fb7c959499"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_EXPORT03.bin",
+    "size": 4424652,
+    "sha256": "da009843cdd74be65c2acf47fd949e83c58e970c679577d08e9bac7ce14b5f58"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_EXPORT04.bin",
+    "size": 4424652,
+    "sha256": "2489a6bfbca4884a269d06895eada7c5d7393594ad40597680a8fa2ba65e7146"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_EXPORT05.bin",
+    "size": 4424652,
+    "sha256": "7cccad84d15244c1dcdf4e87bc84e30bf1f314ecab13028a3ebe058e2e2c8cd8"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_EXPORT06.bin",
+    "size": 4424652,
+    "sha256": "7c62ff7e112770bc67020f14c5af2be2d868313e8cc40cf28837aaebd8c904bc"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_EXPORT07.bin",
+    "size": 4424652,
+    "sha256": "b275e41ffd0da2e4e8bc18944f423bd4b90bff4a9cdcae3a21de6b098a415d3f"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_EXPORT08.bin",
+    "size": 4424652,
+    "sha256": "599a6453976a3817c34744560183e42b215068c2250c8bb53083bd3e2cddc21d"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_EXPORT09.bin",
+    "size": 4424652,
+    "sha256": "11f32b1410a5cf99ac9058bdbb9b788ca363c69d6ed55105fa627454c3fd0d14"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_EXPORT10.bin",
+    "size": 4424652,
+    "sha256": "b9bf21843117745fc0a7f4472543d8afee4dabe9904a8ee15ec50c1d6916ff96"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_EXPORT11.bin",
+    "size": 4424652,
+    "sha256": "dcab4e681fe5985ec7692dbeeabbac271b04eb70de734256fafe81d355d818a4"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_EXPORT12.bin",
+    "size": 4424652,
+    "sha256": "aa04e99c475bd75e5df368e1abeb00e65c7a4824fd096fe32ee546a4f479e50c"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FAR01.bin",
+    "size": 350537,
+    "sha256": "12fdcf3f2aa911c94345d4d7fb72905628f819b8b1ee675e5a96cde65bc1d1ea"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FAR02.bin",
+    "size": 350537,
+    "sha256": "d3e482d3a3cab761c6f79278112a64e69116a9b3a9e99984204d33e15583138d"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FAR09.bin",
+    "size": 350537,
+    "sha256": "011896efd3485b0832a3e62c13a84052677c9f3f12ea05169f74a0a6a9c500bb"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FAR18.bin",
+    "size": 350537,
+    "sha256": "1028e5790e345bf71eafdbba85e7913e1ea5f23f37dfc2ad3f6b8f990e3af2da"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FAR20.bin",
+    "size": 350537,
+    "sha256": "8012f56af11e0d1845d8b9386a5631890a0f1973627e576aa48ca9df92626d2e"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FAR27.bin",
+    "size": 350537,
+    "sha256": "de7aa3b18a34f46464ad6a04f091a44c0e087182e6e75e5aa283075937e9afa5"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FAR28.bin",
+    "size": 350537,
+    "sha256": "7f22b4349c22ce8c8bbc9ef1d1685cd52ce99298c9bd66a1b554696f4dce4315"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FAR29.bin",
+    "size": 350537,
+    "sha256": "c0250bb593ad91cff3bd7dd848e865664b6cc2a8ae70edba6e0ce25c820e44eb"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FAR30.bin",
+    "size": 350537,
+    "sha256": "e0fe50070f00e35a553e9fd4fa062925467b0e7a5a9d4fb797d0b850254f17d8"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FAR32.bin",
+    "size": 350537,
+    "sha256": "ac79bbd45d9f8dca9e5652c2b943c810ebee1d5be728e995dd4e70e17817be71"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE002.bin",
+    "size": 175753,
+    "sha256": "e368379a0b9f5816c35243624f7ffb1c6d77686fe9597080d04f73aa47b8ba53"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE003.bin",
+    "size": 175753,
+    "sha256": "b254ac28bd7ac4caa6bc9c1f71c26fcef2e7af2d8d1a46a71f6064b80527401f"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE004.bin",
+    "size": 175753,
+    "sha256": "12a7f693949b113d7c42537c956837620fbc0f965ea1760c16331b54fa3cf3b8"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE007.bin",
+    "size": 175753,
+    "sha256": "fdd5c688b9fada20a84a37b2da0d6e0a9fac9d50e502fc142cb7223ceeb994f2"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE008.bin",
+    "size": 175753,
+    "sha256": "fdd5c688b9fada20a84a37b2da0d6e0a9fac9d50e502fc142cb7223ceeb994f2"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE009.bin",
+    "size": 175753,
+    "sha256": "00a1565eaa4298e1bc016c1af25380037c18c47b366977139a055c573534a2d1"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE010.bin",
+    "size": 175753,
+    "sha256": "6a7f3200b9545d558661145c5c5f3dd5d22f8119139726f44faf6b4522d0db01"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE037.bin",
+    "size": 175753,
+    "sha256": "b64ba82190e24d766c6ccd5c1aa9d7da4536b9acfcae51eb0cb848e8cc714731"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE038.bin",
+    "size": 175753,
+    "sha256": "b64ba82190e24d766c6ccd5c1aa9d7da4536b9acfcae51eb0cb848e8cc714731"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE039.bin",
+    "size": 175753,
+    "sha256": "b64ba82190e24d766c6ccd5c1aa9d7da4536b9acfcae51eb0cb848e8cc714731"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE040.bin",
+    "size": 175753,
+    "sha256": "b64ba82190e24d766c6ccd5c1aa9d7da4536b9acfcae51eb0cb848e8cc714731"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE041.bin",
+    "size": 175753,
+    "sha256": "f8f0bea6b0835679a729206176d89d4ce1673a6a2d5d0b6f0f1fce46a33f382f"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE042.bin",
+    "size": 175753,
+    "sha256": "96718605fdde557907b498bb8965703010581270f60c8f994de962e9fa7e8ff8"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE053.bin",
+    "size": 175753,
+    "sha256": "05cf1ed9340ba6115293df098bf0dbb03d8c2c31ef27293dccba42a94f13df0c"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE057.bin",
+    "size": 175753,
+    "sha256": "78ad37773c09b340adfce86eb4793a84913d91f2c06e45887ad453202786a78d"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE058.bin",
+    "size": 175753,
+    "sha256": "db380227a94fe00a6d52f42e905f4c528d6c07d98ed5dd60da064860bf492848"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE059.bin",
+    "size": 175753,
+    "sha256": "ebd398c9b0ff633c89e2aa1229152c917ef327d80f5161054955b5703be49e5d"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE060.bin",
+    "size": 175753,
+    "sha256": "080b4aaa46e378ca4f16e71b4889b81f7d65be7e224783fdf106c0a5aac66bd3"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE085.bin",
+    "size": 175753,
+    "sha256": "2a18a0b50be282c7930bb1346152d2f32e34730f99ce72696c723b6979f94532"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE086.bin",
+    "size": 175753,
+    "sha256": "da59afe9405caa1ca8f69e3ef6efe1f74b0009fe9810b657ce1e101b9a1ded55"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE087.bin",
+    "size": 175753,
+    "sha256": "ee620b271750cf6c1dba8074fad14e18b1a0b6fc36791e281b63ec917d4cc237"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE088.bin",
+    "size": 175753,
+    "sha256": "2a3b5269dabf3fe0b4ba9c28cb2a79bb6ff0b85224d31fc58c9adb9bc2fad214"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE089.bin",
+    "size": 175753,
+    "sha256": "e924bc2c881b9e7d732cd1fbc6bceb5c9086841b5a1f4b863f45306e337c1c45"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE092.bin",
+    "size": 175753,
+    "sha256": "faa61b2032cd72712c94c1b48857fc5dc0f51f10e38c073ddd713dc81d8f0a67"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE101.bin",
+    "size": 175753,
+    "sha256": "62902c6400fa091b3fa858fa7ce757e60727a4446873ecd91a8ebade45a80c38"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE102.bin",
+    "size": 175753,
+    "sha256": "b199b79ef6ae51c66e4c5e00d7a92af3656561e7a012eef0263e5edba8d33f05"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE103.bin",
+    "size": 175753,
+    "sha256": "d7ab581250267124d4b2db1a17d7937990a8bf98cfaa13ab6b69978274c416eb"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE104.bin",
+    "size": 175753,
+    "sha256": "b199b79ef6ae51c66e4c5e00d7a92af3656561e7a012eef0263e5edba8d33f05"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE105.bin",
+    "size": 175753,
+    "sha256": "2c026403dc09c4f70308dfedf55da95bd339a0ceec2b9dcf0bb47c08fbda7d0b"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE106.bin",
+    "size": 175753,
+    "sha256": "d7ab581250267124d4b2db1a17d7937990a8bf98cfaa13ab6b69978274c416eb"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE107.bin",
+    "size": 175753,
+    "sha256": "97e8d23b86bf033bf481d4d1230c677eec408679830b40c4f6af641abf4e7912"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE108.bin",
+    "size": 175753,
+    "sha256": "c05aceaa85039656fcfbdec1e20b717dbbd168d33c5fe85d96e0861fb9294d16"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE118.bin",
+    "size": 175753,
+    "sha256": "c9e9288a62764c34ba8e0faf28de588e638ed224b091e35ce438a094e22b35c9"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE121.bin",
+    "size": 175753,
+    "sha256": "fc84968e157f46cf5746411a045751d9b06c33f67fbe343c7b33c9a2d3f07fa0"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE122.bin",
+    "size": 175753,
+    "sha256": "b6ae70548e9941c7866f8ee16f3d439c21d46aa3182ac35434ff390f65346968"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE123.bin",
+    "size": 175753,
+    "sha256": "0cb14629d42c4a1cd9b82b220da8004a46fb666d2bfef8131fdd8d2490a8967e"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE124.bin",
+    "size": 175753,
+    "sha256": "e7c16f11440e872c4088917b31092be8371f21916364e48292c2cd82a57249a5"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE134.bin",
+    "size": 175753,
+    "sha256": "88f795f1d23eb8fa660d426bed68d0a41582532455798d52bdb82b7b57494245"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE135.bin",
+    "size": 175753,
+    "sha256": "3a6aa3b592ebcee9593efdf042a66c0de4241dfaae597b55a9e29367dc182f59"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE136.bin",
+    "size": 175753,
+    "sha256": "de6b5987106418ff4b5e29fabb43f23c29a14adf9586ef9c47cb7fdea5746b07"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE137.bin",
+    "size": 175753,
+    "sha256": "b7810fd75f449782d98bffdb344ebd6e8139bf81fb32b864de05cee1af8a8911"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE138.bin",
+    "size": 175753,
+    "sha256": "6a3c34fdd16c18664d4106135d2d4e2392d94e051d9826cfdbb7947309af406c"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE169.bin",
+    "size": 175753,
+    "sha256": "97e8d23b86bf033bf481d4d1230c677eec408679830b40c4f6af641abf4e7912"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE170.bin",
+    "size": 175753,
+    "sha256": "d757d52bf7e1581eebb670e90cfb3cf692a266c1aa6f3b825fad0a83750568b3"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE171.bin",
+    "size": 175753,
+    "sha256": "355c4446d435c1919a46307441ca3ee0ff66341599097b3d47fc5aeb08ba3616"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE172.bin",
+    "size": 175753,
+    "sha256": "7754cbe47d32c62ee6c448f4021887fd3cb92748a0aa747270b15905ced245e8"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE178.bin",
+    "size": 175753,
+    "sha256": "83ab58902970394e21b7dbe5f5d5c0332bbe3a63799e6b06680c0e2b06785b38"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE183.bin",
+    "size": 175753,
+    "sha256": "2866e8856e4f180b4ed30f40f9267c8b00123ada631b8e7aae8612a0220df0db"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE184.bin",
+    "size": 175753,
+    "sha256": "8cd09952cd60caa8d018693544f059da76c46ebde22328b0a4324a5ea81894da"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE185.bin",
+    "size": 175753,
+    "sha256": "2b01f0faa9a2debdd1f80b8614bfa16c1b213bd596f4ac5e39d8c58730596e38"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE246.bin",
+    "size": 175753,
+    "sha256": "d962d822d50b5d5465ad38eed9083eb321473830b413b6ed0a3721730fc4c0ec"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_FENCE265.bin",
+    "size": 175753,
+    "sha256": "91762b72f73ae24a011a674fbc17651c2687455cbbfd3d12fcdb8a04942e8209"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_ROOF_F01.bin",
+    "size": 22817,
+    "sha256": "5dbda4ec2ad39dc098fbfd58ef88a79fce72c93bca16340ee97a5d2c6ade877e"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_ROOF_F02.bin",
+    "size": 22817,
+    "sha256": "5dbda4ec2ad39dc098fbfd58ef88a79fce72c93bca16340ee97a5d2c6ade877e"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_ROOF_F05.bin",
+    "size": 22817,
+    "sha256": "390418356af5a6239f80b6884ef4f14162efb4fc99f4a7ed1a6e14700fbe8754"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_ROOF_F09.bin",
+    "size": 22817,
+    "sha256": "5dbda4ec2ad39dc098fbfd58ef88a79fce72c93bca16340ee97a5d2c6ade877e"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_ROOF_F10.bin",
+    "size": 22817,
+    "sha256": "5dbda4ec2ad39dc098fbfd58ef88a79fce72c93bca16340ee97a5d2c6ade877e"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_ROOF_F11.bin",
+    "size": 22817,
+    "sha256": "5dbda4ec2ad39dc098fbfd58ef88a79fce72c93bca16340ee97a5d2c6ade877e"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_ROOF_F12.bin",
+    "size": 22817,
+    "sha256": "5dbda4ec2ad39dc098fbfd58ef88a79fce72c93bca16340ee97a5d2c6ade877e"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_ROOF_F19.bin",
+    "size": 22817,
+    "sha256": "2fa6fad3fe04c8c33f3c27eb13c3651fd144666aef3df5c8885232dfb455fedb"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_ROOF_F20.bin",
+    "size": 22817,
+    "sha256": "ae194da16e14749d7ef6a4a1627f04417df3cb2930fa01ea53f235eb1278c423"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_ROOF_F21.bin",
+    "size": 22817,
+    "sha256": "6c7ac2dd105924e3cb20cb2130bf96eba2f019cf4600b0a9a9ade6af1cc93837"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_ROOF_F42.bin",
+    "size": 22817,
+    "sha256": "5dbda4ec2ad39dc098fbfd58ef88a79fce72c93bca16340ee97a5d2c6ade877e"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_ROOF_F54.bin",
+    "size": 22817,
+    "sha256": "6c7ac2dd105924e3cb20cb2130bf96eba2f019cf4600b0a9a9ade6af1cc93837"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_ROOF_F61.bin",
+    "size": 22817,
+    "sha256": "5dbda4ec2ad39dc098fbfd58ef88a79fce72c93bca16340ee97a5d2c6ade877e"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_ROOF_F62.bin",
+    "size": 22817,
+    "sha256": "5dbda4ec2ad39dc098fbfd58ef88a79fce72c93bca16340ee97a5d2c6ade877e"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_ROOF_F63.bin",
+    "size": 22817,
+    "sha256": "5dbda4ec2ad39dc098fbfd58ef88a79fce72c93bca16340ee97a5d2c6ade877e"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_ROOF_F64.bin",
+    "size": 22817,
+    "sha256": "5dbda4ec2ad39dc098fbfd58ef88a79fce72c93bca16340ee97a5d2c6ade877e"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_THUMB01.bin",
+    "size": 66489,
+    "sha256": "f13e1e284946eaf2a5467eba3ecca60bcf2c2185ede67b9f349e7b241dc63088"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_THUMB02.bin",
+    "size": 66489,
+    "sha256": "ffe033704b970c8809326c37c1010ad0204605daab786607b5811465b8ef85d1"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_THUMB03.bin",
+    "size": 66489,
+    "sha256": "c8758b178c08b9ab3b628d1c14be20f587974ec05ed35c463d8b9291b19c0ac4"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_THUMB04.bin",
+    "size": 66489,
+    "sha256": "d55f4e81d919ca92900d8144f593f23e733fe3b5192df71def3f41ce7bdf7a32"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_THUMB05.bin",
+    "size": 66489,
+    "sha256": "d586c0beb487f38ee1d0892a60676d95dfbe7d361d3917fa3b39302fb73f1adb"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_THUMB06.bin",
+    "size": 66489,
+    "sha256": "8c38bdb0072933635da425564955924e87e9498fc2db611f85941f18614f9f0f"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_THUMB07.bin",
+    "size": 66489,
+    "sha256": "1a3db28f2f260c5dc8eb0248b1db3ffe321f767ce603d85ef1324b16a868cb2f"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_THUMB08.bin",
+    "size": 66489,
+    "sha256": "f4b33a7f5cc8528ba49fe22345260661c7cc29fe80e575d22dc21e1a73e40a9a"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_THUMB09.bin",
+    "size": 66489,
+    "sha256": "5612e1d0eee655926b1e5414f86cc80d55976c64f8218cc766c5d3fdd694d3bf"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_THUMB10.bin",
+    "size": 66489,
+    "sha256": "16ded902482b3c0225066052663a039bed801f261001f8fc889f762266c628a4"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_THUMB11.bin",
+    "size": 66489,
+    "sha256": "c03110c750db4711ec3cbd95b349c5084b1b9198830265d093455ceb8f05a0ea"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_THUMB12.bin",
+    "size": 66489,
+    "sha256": "3dbcecd76d7c47dda682bc2b45e28c84169fdb535c53d5ac3590ab32529e2793"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_THUMB13.bin",
+    "size": 66489,
+    "sha256": "e8fb2b73feee5a0a745898adc390799d90e0a56e5da62d1b84b4fa6b562b2711"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_THUMB14.bin",
+    "size": 66489,
+    "sha256": "8e8f5d81f444b8743371c935548a06865ebdf456f0011342d193b0d1d9c522df"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_THUMB15.bin",
+    "size": 66489,
+    "sha256": "eb4d0ccdbbe558cdee82dd5c986c3e832e28ee0446c8dd53e033d1aacbc71108"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_THUMB16.bin",
+    "size": 66489,
+    "sha256": "5c50b72288a28303d26522bfa825fbba34975b93ccfbf9f50641e49de57faffc"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_THUMB17.bin",
+    "size": 66489,
+    "sha256": "9206edf0beb02cdf9cd65b21443f3ca5841bd0bbe1c3eb9fdd46c489536291cf"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_THUMB18.bin",
+    "size": 66489,
+    "sha256": "a84e3b27713b4b385b7110bb4739cd20ccec75fe8681b545debbe97840f834bd"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_THUMB19.bin",
+    "size": 66489,
+    "sha256": "1033c581a2e6c92bab95f33286a24e6c1dd4276d4993989b86c5e7780d3529a5"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_WALL01.bin",
+    "size": 88385,
+    "sha256": "d20325d8a7e6fec3c48a7bc962846e78ea9ebb1c246d68d8f00a6d88cf586ae0"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_WALL02.bin",
+    "size": 88385,
+    "sha256": "d20325d8a7e6fec3c48a7bc962846e78ea9ebb1c246d68d8f00a6d88cf586ae0"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_WALL03.bin",
+    "size": 88385,
+    "sha256": "47c7b80f4f70dac1d571177162707efffe64e303452c4765abfe2bc6d0f91468"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_WALL04.bin",
+    "size": 88385,
+    "sha256": "041989ae63e95f2962b69ca78b15a427986d45f1485f246beadeacc104baf095"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_WALL05.bin",
+    "size": 88385,
+    "sha256": "767c2de75b6aef827a7f3aa271ec6cc6f766c6fed382be1e8267712480bd006e"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_WALL06.bin",
+    "size": 88385,
+    "sha256": "836b0620e0884dc5c9b736559eedef6fd825062a162e94eddfdafca7ea8babd8"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_WALL07.bin",
+    "size": 88385,
+    "sha256": "e06535509017e4fa6ef2e189df65a71142441690baa5ac4f58981f125357f49a"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_WALL08.bin",
+    "size": 88385,
+    "sha256": "771a449bb3df19142b4bc89e2574f4025589f31f9b229ed7bd0f2be43aa4092f"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_WALL09.bin",
+    "size": 88385,
+    "sha256": "6699199bff3f0582955e3ffd212996ecbe086b4f9c60574730d99579260c925b"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_WALL10.bin",
+    "size": 88385,
+    "sha256": "8bb1537b1ded8508639c2abc77afbb89c554e5474361b82d839a9fbf366c26d6"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_WALL11.bin",
+    "size": 88385,
+    "sha256": "c3becc4ef44d6c2a1bf3a7ff6d06066dc0153f727a9ffbc29ba87c5a435d2435"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_WALL12.bin",
+    "size": 88385,
+    "sha256": "63bdf466e4c1ae596fdad198175680d24d8c167ef5e351da804327cb43df0860"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_WALL13.bin",
+    "size": 88385,
+    "sha256": "cab6f01ed883c12e74646bd1a68197531429eccda6a67b1d8644b3500f7ae74a"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_WALL14.bin",
+    "size": 88385,
+    "sha256": "3825fb5f4fe39a1b54507e17b113207261034f3951dfc61465bca7b5e0cf535a"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_WALL15.bin",
+    "size": 88385,
+    "sha256": "e3426be07922551000a9ed7fce55d8e941fcf2fca8ffe2f0396b57873d532e09"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_WALL16.bin",
+    "size": 88385,
+    "sha256": "81ec4ca56546c899b8c3227e7f9c60e919b64b029aa57d99b062769ba099a203"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_WALL21.bin",
+    "size": 88385,
+    "sha256": "b7a4f0c3c147ab3ead33c3e5ca30a0f6e86c8a112bd053622b791677e3807a4c"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_WALL22.bin",
+    "size": 88385,
+    "sha256": "5f8b30503bc3aec0ee0320aa51334a92eb6ce008a72449aa3dd8e95f8adfda78"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_WALL25.bin",
+    "size": 88385,
+    "sha256": "ffc69a182372d7c5e74c4af4ef582988fea75f58989e9e4f194cd9e25d1b5b1f"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_WALL26.bin",
+    "size": 88385,
+    "sha256": "ffc69a182372d7c5e74c4af4ef582988fea75f58989e9e4f194cd9e25d1b5b1f"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_WALL27.bin",
+    "size": 88385,
+    "sha256": "2e6910e91c4ee9c6710277fe54418d25406649924ae87fb8ef2d7becd8022904"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_WALL28.bin",
+    "size": 88385,
+    "sha256": "b2d9ea2690fddd3061ac1499a948904947f15152f3a1b3284a4ea7567b7eba8f"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_WALL33.bin",
+    "size": 88385,
+    "sha256": "d28a4589e0549556f93fa69fe774639a4eec8427aaa393bf4ea9ab7acd30af4f"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_WALL34.bin",
+    "size": 88385,
+    "sha256": "0d8cf7dfd74a6767e3d7fc94b931a780574d0d2281b4700830c22e9358d6c3d3"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_WALL42.bin",
+    "size": 88385,
+    "sha256": "1d745f595a1f5c4dd1abf4f8fbfea7fe1238deba008e668b6e15c7bbd9a12ea6"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_WALL45.bin",
+    "size": 88385,
+    "sha256": "431f67232a1b95898c9441b1e7b31d2a7fd6f9b990a54f351c7ca5bd0c311a7f"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_WALL46.bin",
+    "size": 88385,
+    "sha256": "2a181fb4b86ef24f6a649d151d14ecdb0f1b4ff9600fe7eaf908aebbbf1b410f"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_WALL47.bin",
+    "size": 88385,
+    "sha256": "29888d11880b79d24458f4b44c10fc320597ff284efbc013866f96a0c90ed29e"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_WALL48.bin",
+    "size": 88385,
+    "sha256": "df61ca20af97e31b935d62476be96221481dc1185da8dd9168a24db97fe5739e"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_WALL65.bin",
+    "size": 88385,
+    "sha256": "971e2ddaa370fc998cb008e0163891494136d423ef41b38cfe89d8b54c7f74f5"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_WALL66.bin",
+    "size": 88385,
+    "sha256": "db153bfe53384d73705103083c38175e8333ae0eb607e17bf0bb27b307072103"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_WALL67.bin",
+    "size": 88385,
+    "sha256": "b2eb565f1e85f8e33a21717a9efdd5eb87a724d78fa1536520b6a1955cba57fb"
+  },
+  {
+    "component": "patch-2026",
+    "path": "Patches/ELENCOD2026_01/save/ST_WALL68.bin",
+    "size": 88385,
+    "sha256": "1a602d4b436471e945b979189852dac91d80fddaa5232f71d651f06cf7863ae1"
+  },
+  {
+    "component": "menus-ar",
+    "path": "Game/img/dt05_a.img",
+    "size": 6604800,
+    "sha256": "413c10b314e60d389619d0f9993224c18491c0d43b7a68e75e7ab061a514d533"
+  }
+]

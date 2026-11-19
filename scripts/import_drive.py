@@ -1,0 +1,216 @@
+"""Stream a reviewed Drive ZIP into content-addressed draft release assets.
+
+Only allowlisted game/patch paths are uploaded. No career saves, backups, or APKs.
+The ZIP stays on disk; members are read one at a time without full extraction.
+"""
+import argparse
+import hashlib
+import io
+import json
+import math
+import os
+from pathlib import Path, PurePosixPath
+import re
+import shutil
+import subprocess
+import time
+import zipfile
+
+REPO='Moatezsager/pes26ar-updates'
+CHUNK=16*1024*1024
+HERE=Path(__file__).resolve().parent
+
+
+def sha(data):
+    return hashlib.sha256(data).hexdigest()
+
+
+def run(*args):
+    process=subprocess.run(['gh',*args],text=True,encoding='utf-8',capture_output=True)
+    if process.returncode:
+        raise RuntimeError(process.stderr.strip())
+    return process.stdout
+
+
+def api(path):
+    return json.loads(run('api',path))
+
+
+def canonical(name):
+    if '\\' in name or '\x00' in name or name.startswith('/'):
+        raise ValueError('Unsafe ZIP path')
+    parts=PurePosixPath(name).parts
+    if '..' in parts:
+        raise ValueError('ZIP traversal path')
+    for i,part in enumerate(parts):
+        if part.casefold() in ('game','patches'):
+            return '/'.join(parts[i:])
+    return None
+
+
+def locate(archive,expected):
+    members={}
+    names={n.casefold():n for n in expected}
+    for info in archive.infolist():
+        if info.is_dir():
+            continue
+        name=names.get((canonical(info.filename) or '').casefold())
+        if name is None:
+            continue
+        if name in members or info.flag_bits&1:
+            raise ValueError('Duplicate or encrypted ZIP member: '+str(name))
+        if info.file_size!=expected[name]['size']:
+            raise ValueError('ZIP member size differs from reviewed copy: '+name)
+        members[name]=info
+    missing=set(expected)-set(members)-{'Game/img/dt05_a.img'}
+    if missing:
+        raise ValueError('Source ZIP missing required files: '+', '.join(sorted(missing)))
+    return members
+
+
+def apply_visuals(data,bundle):
+    plan=json.loads(bundle.read('delta.json'))
+    approved=json.loads((HERE/'visual-update.json').read_text())
+    if plan!=approved or len(data)!=plan['source_bytes'] or sha(data)!=plan['source_sha256']:
+        raise ValueError('Visual update requires the exact reviewed dt06.img')
+    result=bytearray(data)
+    result.extend(bundle.read('tail.bin'))
+    for edit in plan['edits']:
+        offset=edit['offset']
+        if offset<8 or offset>8+1442*8 or len(bytes.fromhex(edit['hex']))!=8:
+            raise ValueError('Invalid AFS index delta')
+        result[offset:offset+8]=bytes.fromhex(edit['hex'])
+    if len(result)!=plan['output_bytes'] or sha(result)!=plan['output_sha256']:
+        raise ValueError('Visual update output verification failed')
+    return bytes(result)
+
+
+def assets(release_id):
+    pages=json.loads(run('api','--paginate','--slurp',f'repos/{REPO}/releases/{release_id}/assets?per_page=100'))
+    return {item['name']:item for page in pages for item in page}
+
+
+def matches(asset,size,digest):
+    return asset.get('state')=='uploaded' and asset.get('size')==size and asset.get('digest')=='sha256:'+digest
+
+
+def main():
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--drive-id',required=True)
+    parser.add_argument('--release',required=True)
+    args=parser.parse_args()
+    if not re.fullmatch(r'[A-Za-z0-9_-]{12,100}',args.drive_id) or not re.fullmatch(r'\d+(?:\.\d+){3}',args.release):
+        raise ValueError('Invalid input')
+    if shutil.disk_usage('.').free<11*1024**3:
+        raise RuntimeError('At least 11 GiB free disk is required before downloading')
+    import gdown
+    archive_path=Path('source.zip')
+    for attempt in range(3):
+        try:
+            result=gdown.download(id=args.drive_id,output=str(archive_path),quiet=False,resume=True,use_cookies=False)
+            if not result or not zipfile.is_zipfile(archive_path):
+                raise RuntimeError('Google did not return a complete ZIP archive')
+            break
+        except Exception:
+            if attempt==2:
+                raise
+            time.sleep(5)
+    expected={f['path']:f for f in json.loads((HERE/'expected-files.json').read_text())}
+    if sum(math.ceil(f['size']/CHUNK) for f in expected.values())+3>1000:
+        raise ValueError('Release asset count would exceed GitHub limit')
+    tag='data-'+args.release
+    try:
+        release=api(f'repos/{REPO}/releases/tags/{tag}')
+    except RuntimeError as error:
+        if '404' not in str(error):
+            raise
+        run('release','create',tag,'--repo',REPO,'--target','main','--draft','--title','PES 2026 data '+args.release,
+            '--notes','Verified game data and visual update. Requires chunk-download-v1.')
+        release=api(f'repos/{REPO}/releases/tags/{tag}')
+    if not release['draft']:
+        raise ValueError('Published releases are immutable; choose a new version')
+    existing=assets(release['id'])
+    uploaded={}
+
+    def put(path,digest):
+        nonlocal existing
+        size=path.stat().st_size
+        if path.name in existing:
+            if not matches(existing[path.name],size,digest):
+                raise ValueError('Existing asset differs: '+path.name)
+            return
+        for attempt in range(3):
+            try:
+                run('release','upload',tag,str(path),'--repo',REPO)
+                existing[path.name]=dict(size=size,digest='sha256:'+digest,state='uploaded')
+                return
+            except RuntimeError:
+                existing=assets(release['id'])
+                if path.name in existing:
+                    if matches(existing[path.name],size,digest):
+                        return
+                    if existing[path.name].get('state')=='starter' and api(f'repos/{REPO}/releases/{release["id"]}')['draft']:
+                        run('api','--method','DELETE',f'repos/{REPO}/releases/assets/{existing[path.name]["id"]}')
+                        del existing[path.name]
+                    else:
+                        raise
+                if attempt==2:
+                    raise
+                time.sleep(5*(attempt+1))
+
+    base_url=f'https://github.com/{REPO}/releases/download/{tag}/'
+    manifest=dict(schema=1,release=args.release,status='verified',required_client_capability='chunk-download-v1',
+                  chunk_size=CHUNK,files=[])
+    with zipfile.ZipFile(archive_path) as archive,zipfile.ZipFile('visual-input.zip') as bundle:
+        members=locate(archive,expected)
+        for index,name in enumerate(sorted(expected,key=lambda n:expected[n]['size'])):
+            row=expected[name]
+            source=archive.open(members[name]) if name in members else bundle.open('fallback/dt05_a.img')
+            expected_hash=row['sha256']
+            size=row['size']
+            if name=='Game/img/dt06.img':
+                with source:
+                    original=source.read(size+1)
+                source=io.BytesIO(apply_visuals(original,bundle))
+                visual=json.loads((HERE/'visual-update.json').read_text())
+                size=visual['output_bytes']
+                expected_hash=visual['output_sha256']
+            digest=hashlib.sha256()
+            offset=0
+            chunks=[]
+            with source:
+                while True:
+                    block=source.read(CHUNK)
+                    if not block:
+                        break
+                    digest.update(block)
+                    checksum=sha(block)
+                    key=checksum+'.bin'
+                    if key not in uploaded:
+                        path=Path(key)
+                        path.write_bytes(block)
+                        put(path,checksum)
+                        uploaded[key]=(len(block),checksum)
+                        path.unlink()
+                    chunks.append(dict(offset=offset,size=len(block),sha256=checksum,urls=[base_url+key]))
+                    offset+=len(block)
+            if offset!=size or digest.hexdigest()!=expected_hash:
+                raise ValueError('Source file SHA-256 differs from reviewed copy: '+name)
+            manifest['files'].append(dict(path=name,component=row['component'],size=size,sha256=expected_hash,chunks=chunks))
+            print(f'Verified {index+1}/{len(expected)}: {name}; {len(uploaded)} unique chunks',flush=True)
+    remote=assets(release['id'])
+    if not all(matches(remote.get(n,{}),s,h) for n,(s,h) in uploaded.items()):
+        raise ValueError('Final GitHub asset digest verification failed')
+    encoded=(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n').encode()
+    Path('manifest.json').write_bytes(encoded)
+    put(Path('manifest.json'),sha(encoded))
+    channel=dict(schema=1,release=args.release,manifest_url=base_url+'manifest.json',manifest_sha256=sha(encoded),
+                 required_client_capability='chunk-download-v1')
+    Path('staging-channel.json').write_text(json.dumps(channel,indent=2)+'\n',encoding='utf-8')
+    put(Path('staging-channel.json'),sha(Path('staging-channel.json').read_bytes()))
+    print('DRAFT COMPLETE; all source files and GitHub object digests verified; not published',flush=True)
+    print(json.dumps(channel),flush=True)
+
+
+if __name__=='__main__':
+    main()

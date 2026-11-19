@@ -1,0 +1,44 @@
+{
+  "source_sha256": "40c8f62e1ea2ce024bc377ee32a957d6da0d4dc0a94653e3bb93e8264d3890e2",
+  "source_bytes": 222937088,
+  "output_sha256": "9db532115436bb7f2f4fbc45cd7fe833915dc744c03b5706b10e2acf08f7e60a",
+  "output_bytes": 228771840,
+  "edits": [
+    {
+      "offset": 520,
+      "hex": "00c0490d6fbe0600"
+    },
+    {
+      "offset": 552,
+      "hex": "0080500ddcdb0f00"
+    },
+    {
+      "offset": 632,
+      "hex": "0060600d43a51800"
+    },
+    {
+      "offset": 760,
+      "hex": "0008790d1aad1300"
+    },
+    {
+      "offset": 2344,
+      "hex": "00909a0d0ea30200"
+    },
+    {
+      "offset": 2360,
+      "hex": "00389d0d61560200"
+    },
+    {
+      "offset": 2368,
+      "hex": "00909f0da5260100"
+    },
+    {
+      "offset": 2384,
+      "hex": "00b8a00d91090200"
+    },
+    {
+      "offset": 7704,
+      "hex": "00b88c0d21d20d00"
+    }
+  ]
+}
