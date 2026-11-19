@@ -5,10 +5,32 @@ import json
 import tempfile
 from pathlib import Path
 from unittest.mock import patch
-from import_drive import canonical,locate,matches,draft_release,download_archive
+from import_drive import canonical,locate,matches,draft_release,download_archive,selected_files
 
 
 class ImportTests(unittest.TestCase):
+    def test_arabic_only_package_does_not_require_english_menus(self):
+        a,e,game='Game/img/dt05_a.img','Game/img/dt05_e.img','Game/img/dt01.img'
+        expected={name:dict(size=3) for name in (a,e,game)}
+        stream=io.BytesIO()
+        with zipfile.ZipFile(stream,'w') as z:
+            z.writestr('phone/'+a,b'ara')
+            z.writestr('phone/'+game,b'dat')
+        with zipfile.ZipFile(stream) as z:
+            members=locate(z,expected)
+            self.assertEqual(set(selected_files(expected,members)),{a,game})
+        self.assertIn(e,expected)
+
+    def test_missing_language_or_game_file_is_still_rejected(self):
+        a,e,game='Game/img/dt05_a.img','Game/img/dt05_e.img','Game/img/dt01.img'
+        expected={name:dict(size=3) for name in (a,e,game)}
+        for name in (a,game):
+            stream=io.BytesIO()
+            with zipfile.ZipFile(stream,'w') as z:z.writestr(name,b'abc')
+            with zipfile.ZipFile(stream) as z:
+                with self.assertRaisesRegex(ValueError,'missing required files'):
+                    locate(z,expected)
+
     def test_existing_draft_uses_database_id_not_rest_tag_endpoint(self):
         result=dict(id=42,draft=True,tag_name='data-2026.11.19.1')
         with patch('import_drive.run',return_value=json.dumps(dict(databaseId=42,isDraft=True,tagName=result['tag_name']))) as run:

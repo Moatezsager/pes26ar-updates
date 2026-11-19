@@ -63,9 +63,19 @@ def locate(archive,expected):
             raise ValueError('ZIP member size differs from reviewed copy: '+name)
         members[name]=info
     missing=set(expected)-set(members)-{'Game/img/dt05_a.img'}
+    if 'Game/img/dt05_a.img' in members:
+        missing.discard('Game/img/dt05_e.img')
     if missing:
         raise ValueError('Source ZIP missing required files: '+', '.join(sorted(missing)))
     return members
+
+
+def selected_files(expected,members):
+    # The working Arabic phone package does not require an English menu archive.
+    result=dict(expected)
+    if 'Game/img/dt05_e.img' not in members and 'Game/img/dt05_a.img' in members:
+        result.pop('Game/img/dt05_e.img',None)
+    return result
 
 
 def apply_visuals(data,bundle):
@@ -183,6 +193,13 @@ def main():
                   chunk_size=CHUNK,files=[])
     with zipfile.ZipFile(archive_path) as archive,zipfile.ZipFile('visual-input.zip') as bundle:
         members=locate(archive,expected)
+        expected=selected_files(expected,members)
+        language='Game/img/dt05_a.img' if 'Game/img/dt05_a.img' in members else 'Game/img/dt05_e.img'
+        with archive.open(members[language]) as menu:
+            row=expected[language]
+            if sha(menu.read(row['size']+1))!=row['sha256']:
+                raise ValueError('Menu file differs from the reviewed Arabic/English reference: '+language)
+        print('Menu profile verified: '+language,flush=True)
         for index,name in enumerate(sorted(expected,key=lambda n:expected[n]['size'])):
             row=expected[name]
             source=archive.open(members[name]) if name in members else bundle.open('fallback/dt05_a.img')
