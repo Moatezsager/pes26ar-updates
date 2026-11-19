@@ -12,10 +12,13 @@ mkdir -p "$task_dir"
 cd "$task_dir"
 
 python3 - <<'PY'
-import shutil
+import shutil,zipfile
+from pathlib import Path
 free=shutil.disk_usage('.').free
 print(f'Temporary disk available: {free/1024**3:.1f} GiB')
-if free<11*1024**3:
+complete=Path('source.zip').is_file() and zipfile.is_zipfile('source.zip')
+minimum=512*1024**2 if complete else 11*1024**3
+if free<minimum:
     raise SystemExit('Stopped before downloading: at least 11 GiB temporary disk is required. No paid storage will be created.')
 PY
 

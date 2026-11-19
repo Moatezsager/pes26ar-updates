@@ -1,10 +1,33 @@
 import unittest
 import zipfile
 import io
-from import_drive import canonical,locate,matches
+import json
+import tempfile
+from pathlib import Path
+from unittest.mock import patch
+from import_drive import canonical,locate,matches,draft_release,download_archive
 
 
 class ImportTests(unittest.TestCase):
+    def test_existing_draft_uses_database_id_not_rest_tag_endpoint(self):
+        result=dict(id=42,draft=True,tag_name='data-2026.11.19.1')
+        with patch('import_drive.run',return_value=json.dumps(dict(databaseId=42,isDraft=True,tagName=result['tag_name']))) as run:
+            with patch('import_drive.api',return_value=result) as api:
+                self.assertEqual(draft_release(result['tag_name'],'2026.11.19.1'),result)
+                api.assert_called_once_with('repos/Moatezsager/pes26ar-updates/releases/42')
+                self.assertEqual(run.call_args.args[:2],('release','view'))
+
+    def test_does_not_redownload_complete_zip(self):
+        with tempfile.TemporaryDirectory() as folder:
+            archive=Path(folder)/'source.zip'
+            with zipfile.ZipFile(archive,'w') as z:z.writestr('test',b'verified later')
+            before=archive.read_bytes()
+            with patch('import_drive.shutil.disk_usage') as disk:
+                disk.return_value.free=1024**3
+                with patch.dict('sys.modules',{'gdown':None}):
+                    download_archive(archive,'test-id')
+            self.assertEqual(archive.read_bytes(),before)
+
     def test_private_saves_are_not_selected(self):
         expected={'Game/img/a.img':dict(size=3)}
         stream=io.BytesIO()

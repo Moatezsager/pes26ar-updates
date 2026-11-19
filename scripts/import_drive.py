@@ -94,6 +94,47 @@ def matches(asset,size,digest):
     return asset.get('state')=='uploaded' and asset.get('size')==size and asset.get('digest')=='sha256:'+digest
 
 
+def draft_release(tag,version):
+    # Drafts with no published Git tag can return 404 from REST releases/tags.
+    def view():
+        return json.loads(run('release','view',tag,'--repo',REPO,'--json','databaseId,isDraft,tagName'))
+    try:
+        found=view()
+    except RuntimeError as error:
+        if 'release not found' not in str(error).lower() and '404' not in str(error):
+            raise
+        run('release','create',tag,'--repo',REPO,'--target','main','--draft','--title','PES 2026 data '+version,
+            '--notes','Verified game data and visual update. Requires chunk-download-v1.')
+        found=view()
+    if not found['isDraft'] or found['tagName']!=tag:
+        raise ValueError('Published releases are immutable; choose a new version')
+    release=api(f'repos/{REPO}/releases/{found["databaseId"]}')
+    if not release['draft'] or release['tag_name']!=tag:
+        raise ValueError('Release state changed; refusing to upload')
+    return release
+
+
+def download_archive(archive_path,drive_id):
+    complete=archive_path.is_file() and zipfile.is_zipfile(archive_path)
+    minimum=(512*1024**2) if complete else (11*1024**3)
+    if shutil.disk_usage('.').free<minimum:
+        raise RuntimeError('Insufficient temporary disk; existing download has not been removed')
+    if complete:
+        print('Reusing completed source.zip; no Drive download needed. Member CRC and SHA-256 checks still follow.',flush=True)
+        return
+    import gdown
+    for attempt in range(3):
+        try:
+            result=gdown.download(id=drive_id,output=str(archive_path),quiet=False,resume=True,use_cookies=False)
+            if not result or not zipfile.is_zipfile(archive_path):
+                raise RuntimeError('Google did not return a complete ZIP archive')
+            return
+        except Exception:
+            if attempt==2:
+                raise
+            time.sleep(5)
+
+
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--drive-id',required=True)
@@ -101,34 +142,13 @@ def main():
     args=parser.parse_args()
     if not re.fullmatch(r'[A-Za-z0-9_-]{12,100}',args.drive_id) or not re.fullmatch(r'\d+(?:\.\d+){3}',args.release):
         raise ValueError('Invalid input')
-    if shutil.disk_usage('.').free<11*1024**3:
-        raise RuntimeError('At least 11 GiB free disk is required before downloading')
-    import gdown
     archive_path=Path('source.zip')
-    for attempt in range(3):
-        try:
-            result=gdown.download(id=args.drive_id,output=str(archive_path),quiet=False,resume=True,use_cookies=False)
-            if not result or not zipfile.is_zipfile(archive_path):
-                raise RuntimeError('Google did not return a complete ZIP archive')
-            break
-        except Exception:
-            if attempt==2:
-                raise
-            time.sleep(5)
+    download_archive(archive_path,args.drive_id)
     expected={f['path']:f for f in json.loads((HERE/'expected-files.json').read_text())}
     if sum(math.ceil(f['size']/CHUNK) for f in expected.values())+3>1000:
         raise ValueError('Release asset count would exceed GitHub limit')
     tag='data-'+args.release
-    try:
-        release=api(f'repos/{REPO}/releases/tags/{tag}')
-    except RuntimeError as error:
-        if '404' not in str(error):
-            raise
-        run('release','create',tag,'--repo',REPO,'--target','main','--draft','--title','PES 2026 data '+args.release,
-            '--notes','Verified game data and visual update. Requires chunk-download-v1.')
-        release=api(f'repos/{REPO}/releases/tags/{tag}')
-    if not release['draft']:
-        raise ValueError('Published releases are immutable; choose a new version')
+    release=draft_release(tag,args.release)
     existing=assets(release['id'])
     uploaded={}
 
