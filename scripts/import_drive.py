@@ -104,6 +104,22 @@ def matches(asset,size,digest):
     return asset.get('state')=='uploaded' and asset.get('size')==size and asset.get('digest')=='sha256:'+digest
 
 
+def reuse_asset(existing,name,size,digest,release_id):
+    asset=existing.get(name)
+    if asset is None:
+        return False
+    if matches(asset,size,digest):
+        return True
+    if asset.get('state')=='starter' and asset.get('size')==size:
+        if not api(f'repos/{REPO}/releases/{release_id}')['draft']:
+            raise ValueError('Release is no longer a draft; refusing to remove incomplete asset')
+        run('api','--method','DELETE',f'repos/{REPO}/releases/assets/{asset["id"]}')
+        del existing[name]
+        print('Retrying incomplete upload: '+name,flush=True)
+        return False
+    raise ValueError('Existing completed asset differs; it has not been removed: '+name)
+
+
 def draft_release(tag,version):
     # Drafts with no published Git tag can return 404 from REST releases/tags.
     def view():
@@ -152,6 +168,13 @@ def main():
     args=parser.parse_args()
     if not re.fullmatch(r'[A-Za-z0-9_-]{12,100}',args.drive_id) or not re.fullmatch(r'\d+(?:\.\d+){3}',args.release):
         raise ValueError('Invalid input')
+    import fcntl
+    # Retain this handle throughout the run; never delete the lock inode on exit.
+    task_lock=open('.import.lock','a+')
+    try:
+        fcntl.flock(task_lock.fileno(),fcntl.LOCK_EX|fcntl.LOCK_NB)
+    except BlockingIOError:
+        raise RuntimeError('Another import is running in this session; do not start a second process')
     archive_path=Path('source.zip')
     download_archive(archive_path,args.drive_id)
     expected={f['path']:f for f in json.loads((HERE/'expected-files.json').read_text())}
@@ -165,9 +188,7 @@ def main():
     def put(path,digest):
         nonlocal existing
         size=path.stat().st_size
-        if path.name in existing:
-            if not matches(existing[path.name],size,digest):
-                raise ValueError('Existing asset differs: '+path.name)
+        if reuse_asset(existing,path.name,size,digest,release['id']):
             return
         for attempt in range(3):
             try:
@@ -176,14 +197,8 @@ def main():
                 return
             except RuntimeError:
                 existing=assets(release['id'])
-                if path.name in existing:
-                    if matches(existing[path.name],size,digest):
-                        return
-                    if existing[path.name].get('state')=='starter' and api(f'repos/{REPO}/releases/{release["id"]}')['draft']:
-                        run('api','--method','DELETE',f'repos/{REPO}/releases/assets/{existing[path.name]["id"]}')
-                        del existing[path.name]
-                    else:
-                        raise
+                if reuse_asset(existing,path.name,size,digest,release['id']):
+                    return
                 if attempt==2:
                     raise
                 time.sleep(5*(attempt+1))

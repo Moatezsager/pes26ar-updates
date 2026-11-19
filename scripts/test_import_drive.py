@@ -5,10 +5,27 @@ import json
 import tempfile
 from pathlib import Path
 from unittest.mock import patch
-from import_drive import canonical,locate,matches,draft_release,download_archive,selected_files
+from import_drive import canonical,locate,matches,draft_release,download_archive,selected_files,reuse_asset
 
 
 class ImportTests(unittest.TestCase):
+    def test_incomplete_draft_asset_retries_without_deleting_completed_assets(self):
+        complete=dict(id=1,state='uploaded',size=3,digest='sha256:good')
+        pending=dict(id=2,state='starter',size=3)
+        existing={'complete.bin':complete,'pending.bin':pending}
+        with patch('import_drive.api',return_value=dict(draft=True)) as api,patch('import_drive.run') as run:
+            self.assertTrue(reuse_asset(existing,'complete.bin',3,'good',42))
+            run.assert_not_called()
+            self.assertFalse(reuse_asset(existing,'pending.bin',3,'good',42))
+            run.assert_called_once_with('api','--method','DELETE','repos/Moatezsager/pes26ar-updates/releases/assets/2')
+        self.assertEqual(existing,{'complete.bin':complete})
+        with patch('import_drive.run') as run:
+            with self.assertRaises(ValueError):reuse_asset(existing,'complete.bin',3,'different',42)
+            run.assert_not_called()
+        with patch('import_drive.api',return_value=dict(draft=False)),patch('import_drive.run') as run:
+            with self.assertRaises(ValueError):reuse_asset({'pending.bin':pending},'pending.bin',3,'good',42)
+            run.assert_not_called()
+
     def test_arabic_only_package_does_not_require_english_menus(self):
         a,e,game='Game/img/dt05_a.img','Game/img/dt05_e.img','Game/img/dt01.img'
         expected={name:dict(size=3) for name in (a,e,game)}
