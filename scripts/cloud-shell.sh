@@ -49,7 +49,12 @@ fi
 if [[ ! -d repository/.git ]]; then
   git clone --depth 1 https://github.com/Moatezsager/pes26ar-updates.git repository
 else
-  git -C repository fetch origin main --depth 1
+  # A depth-one fetch hides ancestry and makes a later fast-forward look unrelated.
+  if [[ "$(git -C repository rev-parse --is-shallow-repository)" == 'true' ]]; then
+    git -C repository fetch --unshallow origin main
+  else
+    git -C repository fetch origin main
+  fi
   git -C repository merge --ff-only origin/main
 fi
 
