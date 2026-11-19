@@ -17,9 +17,9 @@ from pathlib import Path
 free=shutil.disk_usage('.').free
 print(f'Temporary disk available: {free/1024**3:.1f} GiB')
 complete=Path('source.zip').is_file() and zipfile.is_zipfile('source.zip')
-minimum=512*1024**2 if complete else 11*1024**3
+minimum=512*1024**2
 if free<minimum:
-    raise SystemExit('Stopped before downloading: at least 11 GiB temporary disk is required. No paid storage will be created.')
+    raise SystemExit('Stopped: at least 512 MiB temporary disk is required. No paid storage will be created.')
 PY
 
 if ! command -v gh >/dev/null 2>&1; then

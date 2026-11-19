@@ -15,6 +15,7 @@ import shutil
 import subprocess
 import time
 import zipfile
+from range_zip import RangeReader
 
 REPO='Moatezsager/pes26ar-updates'
 CHUNK=16*1024*1024
@@ -176,7 +177,14 @@ def main():
     except BlockingIOError:
         raise RuntimeError('Another import is running in this session; do not start a second process')
     archive_path=Path('source.zip')
-    download_archive(archive_path,args.drive_id)
+    if archive_path.is_file() and zipfile.is_zipfile(archive_path):
+        source_archive=archive_path
+        print('Reusing completed source.zip; no Drive download needed.',flush=True)
+    else:
+        if shutil.disk_usage('.').free<512*1024**2:
+            raise RuntimeError('At least 512 MiB temporary disk is required')
+        source_archive=RangeReader('https://drive.usercontent.google.com/download?id='+args.drive_id+'&export=download&confirm=t')
+        print('Reading ZIP directly from Drive with HTTP Range; no full ZIP download to temporary disk.',flush=True)
     expected={f['path']:f for f in json.loads((HERE/'expected-files.json').read_text())}
     if sum(math.ceil(f['size']/CHUNK) for f in expected.values())+3>1000:
         raise ValueError('Release asset count would exceed GitHub limit')
@@ -206,7 +214,7 @@ def main():
     base_url=f'https://github.com/{REPO}/releases/download/{tag}/'
     manifest=dict(schema=1,release=args.release,status='verified',required_client_capability='chunk-download-v1',
                   chunk_size=CHUNK,files=[])
-    with zipfile.ZipFile(archive_path) as archive,zipfile.ZipFile('visual-input.zip') as bundle:
+    with zipfile.ZipFile(source_archive) as archive,zipfile.ZipFile('visual-input.zip') as bundle:
         members=locate(archive,expected)
         expected=selected_files(expected,members)
         language='Game/img/dt05_a.img' if 'Game/img/dt05_a.img' in members else 'Game/img/dt05_e.img'
