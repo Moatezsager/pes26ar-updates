@@ -59,7 +59,6 @@ else
 fi
 
 python3 -m venv .venv
-.venv/bin/pip install --no-cache-dir gdown==6.5.2
 
 input_name='cloud-visual-input-20261119.zip'
 input_sha='471a8e9242a8a47f49ba735edbb1c494d74fd268b342ad91002eb036b0422115'

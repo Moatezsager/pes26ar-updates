@@ -79,6 +79,23 @@ def selected_files(expected,members):
     return result
 
 
+def checkpoint_valid(row,expected,remote,base_url):
+    if not isinstance(row,dict) or any(row.get(k)!=expected[k] for k in ('path','size','sha256','component')):
+        return False
+    offset=0
+    for chunk in row.get('chunks',[]):
+        if not isinstance(chunk,dict):return False
+        digest=chunk.get('sha256','')
+        size=chunk.get('size',0)
+        if not re.fullmatch('[0-9a-f]{64}',digest) or not isinstance(size,int) or not 0<size<=CHUNK:
+            return False
+        if chunk.get('offset')!=offset or chunk.get('urls')!=[base_url+digest+'.bin']:
+            return False
+        if not matches(remote.get(digest+'.bin',{}),size,digest):return False
+        offset+=size
+    return offset==expected['size']
+
+
 def apply_visuals(data,bundle):
     plan=json.loads(bundle.read('delta.json'))
     approved=json.loads((HERE/'visual-update.json').read_text())
@@ -183,7 +200,8 @@ def main():
     else:
         if shutil.disk_usage('.').free<512*1024**2:
             raise RuntimeError('At least 512 MiB temporary disk is required')
-        source_archive=RangeReader('https://drive.usercontent.google.com/download?id='+args.drive_id+'&export=download&confirm=t')
+        source_archive=RangeReader('https://drive.usercontent.google.com/download?id='+args.drive_id+'&export=download&confirm=t',
+                                   cache_dir=Path.home()/'.cache/pes26ar-drive')
         print('Reading ZIP directly from Drive with HTTP Range; no full ZIP download to temporary disk.',flush=True)
     expected={f['path']:f for f in json.loads((HERE/'expected-files.json').read_text())}
     if sum(math.ceil(f['size']/CHUNK) for f in expected.values())+3>1000:
@@ -212,6 +230,10 @@ def main():
                 time.sleep(5*(attempt+1))
 
     base_url=f'https://github.com/{REPO}/releases/download/{tag}/'
+    checkpoint=Path.home()/'.local/state/pes26ar'/args.release/'completed-files.json'
+    checkpoint.parent.mkdir(parents=True,exist_ok=True)
+    completed=json.loads(checkpoint.read_text()) if checkpoint.exists() else {}
+    if not isinstance(completed,dict):raise ValueError('Invalid local checkpoint')
     manifest=dict(schema=1,release=args.release,status='verified',required_client_capability='chunk-download-v1',
                   chunk_size=CHUNK,files=[])
     with zipfile.ZipFile(source_archive) as archive,zipfile.ZipFile('visual-input.zip') as bundle:
@@ -225,6 +247,16 @@ def main():
         print('Menu profile verified: '+language,flush=True)
         for index,name in enumerate(sorted(expected,key=lambda n:expected[n]['size'])):
             row=expected[name]
+            approved=dict(row)
+            if name=='Game/img/dt06.img':
+                visual=json.loads((HERE/'visual-update.json').read_text())
+                approved.update(size=visual['output_bytes'],sha256=visual['output_sha256'])
+            if checkpoint_valid(completed.get(name),approved,existing,base_url):
+                manifest['files'].append(completed[name])
+                for chunk in completed[name]['chunks']:
+                    uploaded[chunk['sha256']+'.bin']=(chunk['size'],chunk['sha256'])
+                print(f'Resumed verified file {index+1}/{len(expected)}: {name}',flush=True)
+                continue
             source=archive.open(members[name]) if name in members else bundle.open('fallback/dt05_a.img')
             expected_hash=row['sha256']
             size=row['size']
@@ -254,9 +286,15 @@ def main():
                         path.unlink()
                     chunks.append(dict(offset=offset,size=len(block),sha256=checksum,urls=[base_url+key]))
                     offset+=len(block)
+                    if len(chunks)%8==0:
+                        print(f'Parts checked: {name} {offset}/{size} bytes',flush=True)
             if offset!=size or digest.hexdigest()!=expected_hash:
                 raise ValueError('Source file SHA-256 differs from reviewed copy: '+name)
             manifest['files'].append(dict(path=name,component=row['component'],size=size,sha256=expected_hash,chunks=chunks))
+            completed[name]=manifest['files'][-1]
+            temporary=checkpoint.with_suffix('.tmp')
+            temporary.write_text(json.dumps(completed),encoding='utf-8')
+            os.replace(temporary,checkpoint)
             print(f'Verified {index+1}/{len(expected)}: {name}; {len(uploaded)} unique chunks',flush=True)
     remote=assets(release['id'])
     if not all(matches(remote.get(n,{}),s,h) for n,(s,h) in uploaded.items()):

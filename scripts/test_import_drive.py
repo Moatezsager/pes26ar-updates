@@ -5,10 +5,21 @@ import json
 import tempfile
 from pathlib import Path
 from unittest.mock import patch
-from import_drive import canonical,locate,matches,draft_release,download_archive,selected_files,reuse_asset
+from import_drive import canonical,locate,matches,draft_release,download_archive,selected_files,reuse_asset,checkpoint_valid
 
 
 class ImportTests(unittest.TestCase):
+    def test_checkpoint_requires_matching_approved_file_and_remote_parts(self):
+        digest='a'*64;base='https://github.com/owner/repo/releases/download/tag/'
+        expected=dict(path='Game/img/test.img',size=3,sha256='b'*64,component='game')
+        row=dict(expected,chunks=[dict(offset=0,size=3,sha256=digest,urls=[base+digest+'.bin'])])
+        remote={digest+'.bin':dict(size=3,state='uploaded',digest='sha256:'+digest)}
+        self.assertTrue(checkpoint_valid(row,expected,remote,base))
+        self.assertFalse(checkpoint_valid(row,expected,{},base))
+        self.assertFalse(checkpoint_valid(row,dict(expected,sha256='c'*64),remote,base))
+        row['chunks'][0]['offset']=1
+        self.assertFalse(checkpoint_valid(row,expected,remote,base))
+
     def test_incomplete_draft_asset_retries_without_deleting_completed_assets(self):
         complete=dict(id=1,state='uploaded',size=3,digest='sha256:good')
         pending=dict(id=2,state='starter',size=3)

@@ -3,12 +3,16 @@ import io
 import re
 import time
 import urllib.request
+import hashlib
+from pathlib import Path
+import os
+import shutil
 
 
 class RangeReader(io.RawIOBase):
     BLOCK=8*1024*1024
 
-    def __init__(self,url):
+    def __init__(self,url,cache_dir=None,cache_bytes=3500*1024**2):
         super().__init__()
         self.url=url
         self.position=0
@@ -16,6 +20,33 @@ class RangeReader(io.RawIOBase):
         self.cache_start=0
         self.total=None
         self._fetch(0,0)
+        self.cache_dir=Path(cache_dir)/hashlib.sha256((url+str(self.total)).encode()).hexdigest() if cache_dir else None
+        self.cache_bytes=cache_bytes
+        if self.cache_dir:self.cache_dir.mkdir(parents=True,exist_ok=True)
+
+    def _block(self,start,end):
+        if self.cache_dir:
+            for path in self.cache_dir.glob(f'{start}-*.bin'):
+                if path.is_symlink():raise ValueError('Unsafe cache symlink')
+                data=path.read_bytes()
+                if len(data)==end-start+1 and hashlib.sha256(data).hexdigest()==path.stem.split('-',1)[1]:
+                    path.touch()
+                    return data
+                path.unlink()
+        data=self._fetch(start,end)
+        if self.cache_dir:
+            files=sorted(self.cache_dir.glob('*.bin'),key=lambda p:p.stat().st_mtime)
+            used=sum(p.stat().st_size for p in files)
+            for old in files:
+                if used+len(data)<=self.cache_bytes and shutil.disk_usage(self.cache_dir).free>=len(data)+32*1024**2:break
+                used-=old.stat().st_size
+                old.unlink()
+            if len(data)<=self.cache_bytes and shutil.disk_usage(self.cache_dir).free>=len(data)+32*1024**2:
+                target=self.cache_dir/f'{start}-{hashlib.sha256(data).hexdigest()}.bin'
+                temporary=target.with_suffix('.tmp')
+                temporary.write_bytes(data)
+                os.replace(temporary,target)
+        return data
 
     def _fetch(self,start,end):
         for attempt in range(3):
@@ -55,7 +86,7 @@ class RangeReader(io.RawIOBase):
         while count:
             if not self.cache_start<=self.position<self.cache_start+len(self.cache):
                 self.cache_start=self.position//self.BLOCK*self.BLOCK
-                self.cache=self._fetch(self.cache_start,min(self.total-1,self.cache_start+self.BLOCK-1))
+                self.cache=self._block(self.cache_start,min(self.total-1,self.cache_start+self.BLOCK-1))
             start=self.position-self.cache_start
             take=min(count,len(self.cache)-start)
             pieces.append(self.cache[start:start+take])

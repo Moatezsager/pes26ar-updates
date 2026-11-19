@@ -22,10 +22,9 @@ jobs:
     timeout-minutes: 350
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
-      - name: Install public download helper in an isolated environment
+      - name: Prepare isolated standard-library Python environment
         run: |
           python3 -m venv .venv
-          .venv/bin/pip install --no-cache-dir gdown==6.5.2
       - name: Download reviewed visual delta
         env:
           GH_TOKEN: ${{ github.token }}
