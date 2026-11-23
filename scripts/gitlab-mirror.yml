@@ -1,0 +1,63 @@
+stages: [import, mirror]
+
+import-game-data:
+  rules:
+    - when: manual
+  stage: import
+  image: python:3.12-slim
+  tags: [saas-linux-small-amd64]
+  timeout: 3h
+  resource_group: pes26ar-data-import
+  interruptible: false
+  retry:
+    max: 1
+    when: [runner_system_failure, stuck_or_timeout_failure]
+  script:
+    - |
+      python - <<'PY'
+      import hashlib, pathlib, urllib.request
+      base='https://raw.githubusercontent.com/Moatezsager/pes26ar-updates/11e4777/scripts/'
+      expected={'range_zip.py': '8cc774e8c8850f856329ba61558e81b34e1f080ccb6211e90979a16e4215fdbc', 'import_drive.py': 'a1d847665184c18ec29c68a2c5847a5c44a0dedbc7240bee484daffdac566bfb', 'gitlab_import.py': '032fd5a0dc51927ff6b429c25d55f55560ef858c435bea1384df0a708e6d7861', 'expected-files.json': '40e6b50077592959b25bf21afe949042c1564a462aa0441ea1c47d43ed732cd0', 'visual-update.json': 'c077fe2b3c9aca94139319abf9fff89eb2e91bacff1d855839878e1837a7c52c'}
+      pathlib.Path('importer').mkdir(exist_ok=True)
+      for name,digest in expected.items():
+          with urllib.request.urlopen(base+name,timeout=45) as response:
+              data=response.read(2*1024*1024+1)
+          assert len(data)<=2*1024*1024 and hashlib.sha256(data).hexdigest()==digest, 'Bootstrap checksum mismatch: '+name
+          pathlib.Path('importer',name).write_bytes(data)
+      print('Verified importer source files',flush=True)
+      PY
+    - python importer/gitlab_import.py
+
+
+mirror-to-github:
+  stage: mirror
+  image: python:3.12-slim
+  tags: [saas-linux-small-amd64]
+  timeout: 3h
+  resource_group: pes26ar-cloud-mirror
+  interruptible: false
+  variables:
+    MIRROR_ONLY_PROBE: "true"
+  rules:
+    - when: manual
+  script:
+    - apt-get update -qq && apt-get install -y --no-install-recommends gh ca-certificates
+    - |
+      python - <<'PYBOOT'
+      import hashlib, pathlib, urllib.request
+      base='https://raw.githubusercontent.com/Moatezsager/pes26ar-updates/9b34b69be50960146f2e75bd8a87ab1459ce1929/scripts/'
+      expected={'mirror_public.py': '6208ed8a31cc14adbe0bb49204eb069d9a59ba65c19cace626596f36b0a00699', 'import_drive.py': 'a1d847665184c18ec29c68a2c5847a5c44a0dedbc7240bee484daffdac566bfb', 'range_zip.py': '8cc774e8c8850f856329ba61558e81b34e1f080ccb6211e90979a16e4215fdbc'}
+      pathlib.Path('mirror').mkdir(exist_ok=True)
+      for name,digest in expected.items():
+          with urllib.request.urlopen(base+name,timeout=60) as r:
+              data=r.read(2*1024*1024+1)
+          assert len(data)<=2*1024*1024 and hashlib.sha256(data).hexdigest()==digest, 'Bootstrap verification failed: '+name
+          pathlib.Path('mirror',name).write_bytes(data)
+      print('VERIFIED_CLOUD_MIRROR_CODE')
+      PYBOOT
+    - |
+      if [ "$MIRROR_ONLY_PROBE" = "true" ]; then
+        python mirror/mirror_public.py --probe
+      else
+        python mirror/mirror_public.py --release 2026.11.23.2 --manual-archive
+      fi
